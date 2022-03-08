@@ -26,7 +26,6 @@ dependencies {
             'org.aspectj:aspectjweaver:1.9.8',
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
-            'io.rest-assured:rest-assured:4.5.0',
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.aeonbits.owner:owner:1.0.12",
             'org.assertj:assertj-core:3.22.0',
@@ -62,11 +61,5 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-}
-
-task demowebshop(type: Test) {
-    useJUnitPlatform {
-        includeTags 'demowebshop'
     }
 }
