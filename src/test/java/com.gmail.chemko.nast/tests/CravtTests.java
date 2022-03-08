@@ -18,8 +18,8 @@ public class CravtTests extends TestBase {
     @DisplayName("Page title should have header text")
     void titleTest() {
         step("Open url 'https://shop.cravt.by/'", () -> {
-                open("https://shop.cravt.by/");
-    });
+            open("https://shop.cravt.by/");
+        });
 
         step("Page title should have text 'Кравт - интернет-магазин парфюмерии и косметики - KPABT'", () -> {
             String expectedTitle = "Кравт - интернет-магазин парфюмерии и косметики - KPABT";
@@ -61,12 +61,16 @@ public class CravtTests extends TestBase {
     @DisplayName("Search results should appear")
     void searchTest() {
         step("Open the main page", () -> {
-                open("https://shop.cravt.by/");
-    });
+            open("https://shop.cravt.by/");
+        });
+
         step("Open the main page", () -> {
             $(".top-search-lite-box__input").setValue("Gucci").pressEnter();
-    });
-        $(".page-title").shouldHave(text("Результаты по запросу «Gucci»"));
+        });
+
+        step("Open the main page", () -> {
+            $(".page-title").shouldHave(text("Результаты по запросу «Gucci»"));
+        });
     }
 
 
